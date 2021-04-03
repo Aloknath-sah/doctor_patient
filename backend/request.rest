@@ -1,0 +1,55 @@
+GET http://localhost:5000/api/patient?page=1&limit=5
+
+###
+GET http://localhost:5000/api/patientsearch/a
+
+###
+POST http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+    "doctor_name":"kanchan",
+    "password":"123"
+}
+
+###
+GET http://localhost:5000/api
+
+###
+POST http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+    "doctor_name":"kanchan",
+    "password":"123"
+}
+
+###
+POST http://localhost:5000/api/patient
+Content-Type: application/json
+
+{
+    "doctor_id": "603b23b97df353",
+    "patient_name": "siddhart",
+    "doctor_name":"kanchan",
+    "age": 25,
+    "gender": "female",
+    "avatar": "https://randomuser.me/api/portraits/men/18.jpg",
+    "medicines": [
+        {
+            "id": 1,
+            "medicine_name": "lenspo",
+            "quantity": 2,
+        },
+        {
+            "id": 2,
+            "medicine_name": "aspirin",
+            "quantity": 1,
+        },
+        {
+            "id": 3,
+            "medicine_name": "azitromycin",
+            "quantity": 5,
+        }
+    ]
+}
