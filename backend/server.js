@@ -12,6 +12,12 @@ connectDB()
 app.use("/api",patientRoutes)
 app.use("/api",doctorRoutes)
 
-app.listen(5000,()=>{
+const port = process.env.PORT || 5000
+
+if(process.env.NODE_ENV == "production"){
+    app.use(express.static("frontend/build"))
+}
+
+app.listen(port,()=>{
     console.log("The server is up and running")
 })

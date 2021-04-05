@@ -3,9 +3,10 @@ require("dotenv").config()
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect("mongodb://localhost/doctor", {
+        const conn = await mongoose.connect(process.env.MONGO_ATLAS_URI,{
             useCreateIndex: true,
             useUnifiedTopology: true,
+            useFindAndModify: false,
             useNewUrlParser: true,
         });
 
